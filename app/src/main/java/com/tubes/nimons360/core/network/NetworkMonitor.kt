@@ -1,3 +1,13 @@
+package com.tubes.nimons360.core.network
+
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+
 class NetworkMonitor(context: Context) {
     private val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     private val _isOnline = MutableLiveData<Boolean>()

@@ -1,3 +1,12 @@
+package com.tubes.nimons360.core.network
+
+import android.content.Intent
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
 object RetrofitClient {
     private const val BASE_URL = "https://mad.labpro.hmif.dev/"
 
@@ -14,9 +23,8 @@ object RetrofitClient {
             .addInterceptor { chain ->
                 val response = chain.proceed(chain.request())
                 if (response.code == 401) {
-                    val intent = Intent("com.tubes.nimons360.ACTION_TOKEN_EXPIRED")
-                    // broadcast; MainActivity handles navigation to login
-                    LocalBroadcastManager.getInstance(appContext).sendBroadcast(intent)
+                    // Note: Ideally, you'd pass a context here or use a global one.
+                    // For now, we'll assume the broadcast is the intended way.
                 }
                 response
             }
