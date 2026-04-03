@@ -1,3 +1,5 @@
+package com.tubes.nimons360.core.network.model
+
 data class LoginRequest(val email: String, val password: String)
 data class LoginResponse(val data: LoginData)
 data class LoginData(val token: String, val expiresAt: String, val user: UserDto)

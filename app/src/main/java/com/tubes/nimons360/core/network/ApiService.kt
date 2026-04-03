@@ -1,3 +1,8 @@
+package com.tubes.nimons360.core.network
+
+import com.tubes.nimons360.core.network.model.*
+import retrofit2.http.*
+
 interface ApiService {
     @POST("api/login")
     suspend fun login(@Body request: LoginRequest): LoginResponse

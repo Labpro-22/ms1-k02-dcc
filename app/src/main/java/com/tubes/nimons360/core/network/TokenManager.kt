@@ -1,3 +1,9 @@
+package com.tubes.nimons360.core.network
+
+import android.content.Context
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
+
 class TokenManager(context: Context) {
     private val prefs = EncryptedSharedPreferences.create(
         context, "nimons_secure_prefs",

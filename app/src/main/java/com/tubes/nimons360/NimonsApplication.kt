@@ -1,3 +1,12 @@
+package com.tubes.nimons360
+
+import android.app.Application
+import com.tubes.nimons360.core.database.AppDatabase
+import com.tubes.nimons360.core.network.ApiService
+import com.tubes.nimons360.core.network.NetworkMonitor
+import com.tubes.nimons360.core.network.RetrofitClient
+import com.tubes.nimons360.core.network.TokenManager
+
 class NimonsApplication : Application() {
     lateinit var tokenManager: TokenManager
     lateinit var apiService: ApiService
